@@ -135,11 +135,6 @@ fi
 AX_LIB_HILBERT([],[echo "Cannot detect libhilbert, use the --with-libhilbert option if it is not installed in the default location"
                     exit 210])
 
-##########
-
-## Check for PETSC
-
-AX_LIB_PETSC()
 
 ## Check for quadmath
 
@@ -376,6 +371,10 @@ AX_SUITESPARSE([],[])
 ###### Checking for EIGEN
 
 AX_EIGEN([],[])
+
+######
+
+AX_LIB_PETSC()
 
 ###### RT runtime lib
 
