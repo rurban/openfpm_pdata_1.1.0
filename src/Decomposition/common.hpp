@@ -114,6 +114,19 @@ struct Box_sub_k
 	}
 };
 
+template<unsigned int dim,typename T>
+struct Box_map
+{
+	Box<dim,T> box;
+
+	long int prc;
+
+	static bool noPointers()
+	{
+		return true;
+	}
+};
+
 //! Case for local ghost box
 template<unsigned int dim, typename T>
 struct lBox_dom
