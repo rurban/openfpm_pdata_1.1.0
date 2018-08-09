@@ -8,6 +8,7 @@ AC_INIT(OpenFPM_pdata, 1.0.0, BUG-REPORT-ADDRESS)
 AC_CANONICAL_SYSTEM
 AC_CONFIG_SRCDIR([src/main.cpp])
 AC_CONFIG_SUBDIRS([openfpm_data openfpm_devices openfpm_vcluster openfpm_io openfpm_numerics])
+AC_CONFIG_MACRO_DIRS([m4])
 
 #### Adding --with-pdata option and openfpm_pdata to prefix folder
 
@@ -22,7 +23,7 @@ ac_configure_args="$ac_configure_args --with-pdata=../../src"
 
 ########################
 
-AM_INIT_AUTOMAKE([subdir-objects])
+AM_INIT_AUTOMAKE([subdir-objects foreign])
 AC_CONFIG_HEADER([src/config/config.h])
 m4_ifdef([ACX_PTHREAD],,[m4_include([m4/acx_pthread.m4])])
 m4_ifdef([ACX_MPI],,[m4_include([m4/acx_mpi.m4])])
